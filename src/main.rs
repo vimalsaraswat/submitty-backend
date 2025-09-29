@@ -1,4 +1,5 @@
 mod api;
+mod oauth;
 use crate::api::api_router;
 
 use axum::Router;
