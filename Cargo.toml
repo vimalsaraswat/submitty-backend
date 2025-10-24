@@ -3,13 +3,17 @@ name = "submitty-backend"
 version = "0.1.0"
 edition = "2024"
 
+[workspace]
+members = [".", "migration"]
+
 [dependencies]
+migration = { path = "migration" }
 anyhow = "1.0.100"
 axum = "0.8.4"
 dotenvy = "0.15.7"
 oauth2 = { version = "5.0.0", features = ["reqwest-blocking"] }
 reqwest = { version = "0.12.23", features = ["json"] }
-sea-orm = { version = "1.1.16", features = ["debug-print", "runtime-tokio-native-tls", "sqlx-postgres"] }
+sea-orm = { version = "2.0.0-rc", features = ["debug-print", "runtime-tokio-native-tls", "sqlx-postgres", "macros"] }
 serde = "1.0.227"
 tokio = { version = "1.47.1", features = ["full"] }
 tower-http = { version = "0.6.6", features = ["trace"] }
